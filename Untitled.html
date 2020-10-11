@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Your Knowledge</title>
+    <link rel="stylesheet" href="./style.css" type="text/css">
+</head>
+
+<body>
+    <div class=container>
+        <div id=text1>
+            <h1>Test Your Knowledge!</h1>
+            <p>welcome to the coding quiz! let's test your knowdledge.
+                You will be presented with questions to answer you have 2 mins to complete the quiz.
+                Answer wrong and 10 seconds will be removed from the timer. Good luck!</p>
+
+            <h2>
+                <span id="time-left">Press the button to get started</span>
+            </h2>
+        </div>
+        <button class="btn" id="timer" type="submit">Start Quiz</button>
+
+    </div>
+    <div id="quiz" style="display: none;">
+        <div id="question">
+            <p> question</p>
+        </div>
+    </div>
+
+    <div id="answers">
+        <div class="answer" id="A" onclick="checkAnswer('A')">A</div>
+        <div class="answer" id="B" onclick="checkAnswer('B')">B</div>
+        <div class="answer" id="C" onclick="checkAnswer('C')">C</div>
+    </div>
+
+
+
+
+    <div id="scoreContainer" style="display: none;">
+
+
+    </div>
+
+    <script src="./javascript.js"></script>
+</body>
+
+</html>
