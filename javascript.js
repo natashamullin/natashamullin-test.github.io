@@ -91,6 +91,34 @@ getNewQuestion = () => {
     
 };
 
+var timeleft = 300
+function convertSeconds(s){
+    var min = floor(s / 60);
+    var sec = s % 60 ; 
+    return nf(min, 2) + ":" + nf(sec, 2);
+}
+
+function setup(){
+    noCanvas();
+
+ var timer = select("#timer");
+ timer.html(convertSeconds(timeleft - questionCounter));
+
+ function timeIt (){
+     questionCounter++;
+     timer.html(convertSeconds(timeleft - questionCounter));
+
+ }
+
+ setInterval( timeIt, 1000);
+
+}
+
+
+
+
+
+
 
 
 
