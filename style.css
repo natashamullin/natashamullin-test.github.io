@@ -1,24 +1,43 @@
+*,*::before, *::after{
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
 
+}
 
 .container {
     background-color: white;
-    display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 400px;
+    width: 70%;
     height: auto;
     border:  solid black;
     padding: 10px;
-    margin: 10px;
+    margin: 20px auto;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 2px;
 
 }
 
-#text1 {
+body {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    width: 100vh;
     font-size: 20px;    
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6em;
 }
+li{
+    list-style: none;
+}
+.hide{
+display: none;
 
+}
 .btn {
     background-color: teal;
     color: white;
@@ -28,6 +47,10 @@
     border-radius: 10px;
 }
 
+.btn:hover {
+    border-color: black;
+}
+
 .button2 {
     background-color: turquoise;
     color: black;
@@ -35,3 +58,9 @@
     margin: 10px;
     width: 15px;
 }
+ @media only screen and  (max-width: 900px) {
+    .container {
+        
+        width: 90%;
+       
+ }
