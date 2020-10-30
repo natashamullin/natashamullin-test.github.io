@@ -74,47 +74,49 @@ startGame = () => {
 getNewQuestion = () => {
     if (availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
         localStorage.setItem('mostRecentScore', score)
-        return window.location.assign('/end.html')
+        return window.location.href = './end.html'
     }
 
-    questionCounter ++
+    questionCounter++
     progressText.innerText = `Question ${questionCounter} of ${MAX_QUESTIONS}`
 
-    const questionIndex = Math.floor(Math.random() *availableQuestions.length)
-    currentQuestion =availableQuestions[questionIndex]
+    const questionIndex = Math.floor(Math.random() * availableQuestions.length)
+    currentQuestion = availableQuestions[questionIndex]
     question.innerText = currentQuestion.question
 
-    choices.forEach (choice => {
+    choices.forEach(choice => {
         const number = choice.dataset['number']
         choice.innerText = currentQuestion['choice' + number]
-    
+
     })
 
-availableQuestions.splice(questionIndex, 1)
+    availableQuestions.splice(questionIndex, 1)
     acceptingAnswers = true
 }
 
-choices.forEach (choice => {
+choices.forEach(choice => {
     choice.addEventListener('click', e => {
-        if(!acceptingAnswers) return
+        if (!acceptingAnswers) return
 
         acceptingAnswers = false
         const selectedChoice = e.target
-    
-    const selectedAnswer = selectedChoice.dataset['number']
 
-    if(selectedAnswer === 'answer') {
-        incrementScore(SCORE_POINTS)
-    }
-setTimeout(() => {
-    getNewQuestion ()
-}, 1000)
-    
-})
+        const selectedAnswer = + selectedChoice.dataset['number']
+
+
+        if (selectedAnswer === currentQuestion.answer) {
+
+            incrementScore(SCORE_POINTS)
+        }
+        setTimeout(() => {
+            getNewQuestion()
+        }, 1000)
+
+    })
 })
 
-incrementScore = num => {
-    score +=num
+const incrementScore = num => {
+    score += num
     scoreText.innerText = score
 
 }

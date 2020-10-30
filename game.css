@@ -7,7 +7,7 @@
     background: lightgrey;
     font-size: 3rem;
     min-width: 80rem;
-    overflow: hidden;
+    overflow: autos;
 }
 
 .choice-container:hover {
